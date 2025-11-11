@@ -8,8 +8,7 @@ function isAuthenticated(req, _res, next) {
     }
     try {
         const decoded = (0, jwt_1.verifyAccessToken)(token);
-        req.user = decoded;
-        next();
+        
     }
     catch (error) {
         throw new errors_1.UnauthorizedError('Invalid or expired token');
